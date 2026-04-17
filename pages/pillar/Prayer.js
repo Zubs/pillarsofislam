@@ -14,7 +14,9 @@ export function render(outlet) {
 
 function buildHTML() {
   return `
-<div class="page-header pillar-header-prayer">
+<div class="page-header pillar-header-prayer" style="position:relative">
+  <div class="ornament-hanging left" aria-hidden="true" style="opacity:0.3"></div>
+  <div class="ornament-hanging right" aria-hidden="true" style="opacity:0.3"></div>
   ${geoPattern()}
   <div class="page-header-inner">
     <div class="pillar-num-badge" style="background:var(--prayer-light);color:var(--prayer-color)">Pillar 2 of 5 &nbsp;·&nbsp; الصلاة</div>
@@ -25,8 +27,11 @@ function buildHTML() {
 
 <div class="content-narrow">
 
-  <div class="quran-block">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا</div>
     <div class="quran-ref">Qur'an 4:103</div>
     <div class="quran-trans">"Indeed, prayer has been decreed upon the believers a decree of specified times." — Prayer is not optional or approximate; it has specific times divinely ordained.</div>
@@ -91,7 +96,7 @@ function buildHTML() {
   </div>
 
   <!-- ── QIBLA FINDER ────────────────────────────────────────── -->
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
   <span class="eyebrow">Qibla Finder</span>
   <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,1.9rem);margin-bottom:.75rem">Direction of the Ka'bah</h2>
   <p class="prose" style="margin-bottom:1.5rem">The Qibla (قِبْلَة) is the direction of the Masjid al-Haram in Makkah, towards which all Muslims face when praying. Use the same coordinates entered above.</p>
@@ -120,7 +125,7 @@ function buildHTML() {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Educational -->
   <span class="eyebrow">Understanding Salah</span>
@@ -147,7 +152,7 @@ function buildHTML() {
     <div class="hadith-text">"Islam is built on five [pillars]: testifying that there is no god but Allah and that Muhammad is the Messenger of Allah, establishing the prayer, paying the Zakat, making the pilgrimage to the House, and fasting in Ramadan."</div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Conditions & pillars of prayer -->
   <span class="eyebrow">Conditions & Structure</span>
@@ -163,7 +168,7 @@ function buildHTML() {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <div class="faq-list" id="faq-prayer">
     ${[

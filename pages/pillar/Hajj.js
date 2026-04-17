@@ -14,7 +14,9 @@ function buildHTML() {
   const dhulHijjahDays = hijri.month === 12 ? `Day ${hijri.day} of Dhū al-Ḥijjah` : '';
 
   return `
-<div class="page-header pillar-header-hajj">
+<div class="page-header pillar-header-hajj" style="position:relative">
+  <div class="ornament-hanging left" aria-hidden="true" style="opacity:0.3"></div>
+  <div class="ornament-hanging right" aria-hidden="true" style="opacity:0.3"></div>
   ${geoPattern()}
   <div class="page-header-inner">
     <div class="pillar-num-badge" style="background:var(--hajj-light);color:var(--hajj-color)">Pillar 5 of 5 &nbsp;·&nbsp; الحج</div>
@@ -25,8 +27,11 @@ function buildHTML() {
 
 <div class="content-narrow">
 
-  <div class="quran-block">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا</div>
     <div class="quran-ref">Qur'an 3:97</div>
     <div class="quran-trans">"And [due] to Allah from the people is a pilgrimage to the House — for whoever is able to find thereto a way."</div>
@@ -53,7 +58,7 @@ function buildHTML() {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Types of Hajj -->
   <span class="eyebrow">Types of Hajj</span>
@@ -76,7 +81,7 @@ function buildHTML() {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- The Rites of Hajj — step by step -->
   <span class="eyebrow">The Rites</span>
@@ -130,7 +135,7 @@ function buildHTML() {
       </div>`).join('')}
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Umrah -->
   <span class="eyebrow">Lesser Pilgrimage</span>
@@ -146,7 +151,7 @@ function buildHTML() {
       </div>`).join('')}
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <div class="faq-list" id="faq-hajj">
     ${[

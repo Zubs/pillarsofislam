@@ -12,7 +12,9 @@ export function render(outlet) {
 
 function buildHTML() {
   return `
-<div class="page-header pillar-header-zakat">
+<div class="page-header pillar-header-zakat" style="position:relative">
+  <div class="ornament-hanging left" aria-hidden="true" style="opacity:0.3"></div>
+  <div class="ornament-hanging right" aria-hidden="true" style="opacity:0.3"></div>
   ${geoPattern()}
   <div class="page-header-inner">
     <div class="pillar-num-badge" style="background:var(--zakat-light);color:var(--zakat-color)">Pillar 3 of 5 &nbsp;·&nbsp; الزكاة</div>
@@ -23,8 +25,11 @@ function buildHTML() {
 
 <div class="content-wrap" style="max-width:1100px">
 
-  <div class="quran-block" style="max-width:860px">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy" style="max-width:860px; margin-left:auto; margin-right:auto">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا</div>
     <div class="quran-ref">Qur'an 9:103</div>
     <div class="quran-trans">"Take from their wealth a charity by which you purify them and cause them increase." — The direct divine command establishing Zakat.</div>
@@ -159,7 +164,7 @@ function buildHTML() {
     </div><!-- .calc-layout -->
   </div><!-- calculator section -->
 
-  <div class="divider" style="max-width:860px"></div>
+  <div class="divider-kufic" style="max-width:860px; margin-left:auto; margin-right:auto" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Educational content below calc -->
   <div style="max-width:860px">

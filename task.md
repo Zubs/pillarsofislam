@@ -1,0 +1,19 @@
+- `[/]` Phase 1: Foundation
+  - `[ ]` Create `css/ornament.css` with Kufic design system classes
+  - `[ ]` Add `ornament.css` to `index.html`
+- `[ ]` Phase 2: Global Shell Integration
+  - `[ ]` Apply corner elements to mobile navigation menu in `js/app.js`
+  - `[ ]` Enhance footer with Kufic grid/divider in `js/app.js`
+- `[ ]` Phase 3: Home Page Implementation
+  - `[ ]` Add `.ornament-hanging` and `.bg-kufic-grid` to Hero section in `pages/Home.js`
+  - `[ ]` Apply `.frame-calligraphy` to Quote blocks in `pages/Home.js`
+  - `[ ]` Add `.ornament-hanging` to CTA section in `pages/Home.js`
+- `[ ]` Phase 4: Pillar Pages Implementation
+  - `[ ]` Refactor quotes and dividers in `pages/pillar/Faith.js`
+  - `[ ]` Refactor quotes and dividers in `pages/pillar/Prayer.js`
+  - `[ ]` Refactor quotes and dividers in `pages/pillar/Zakat.js`
+  - `[ ]` Refactor quotes and dividers in `pages/pillar/Fasting.js`
+  - `[ ]` Refactor quotes and dividers in `pages/pillar/Hajj.js`
+- `[ ]` Phase 5: QA and Walkthrough
+  - `[ ]` Manual verification of functionality and aesthetics
+  - `[ ]` Create walkthrough.md

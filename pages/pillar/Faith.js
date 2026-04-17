@@ -3,7 +3,9 @@ import { geoPattern, initFaqs } from '../../js/app.js';
 
 export function render(outlet) {
   outlet.innerHTML = `
-<div class="page-header pillar-header-faith">
+<div class="page-header pillar-header-faith" style="position:relative">
+  <div class="ornament-hanging left" aria-hidden="true" style="opacity:0.3"></div>
+  <div class="ornament-hanging right" aria-hidden="true" style="opacity:0.3"></div>
   ${geoPattern()}
   <div class="page-header-inner">
     <div class="pillar-num-badge" style="background:var(--faith-light);color:var(--faith-color)">Pillar 1 of 5 &nbsp;·&nbsp; الشهادة</div>
@@ -15,8 +17,11 @@ export function render(outlet) {
 <div class="content-narrow">
 
   <!-- Shahada in Arabic -->
-  <div class="quran-block" style="text-align:center;padding:2.5rem 2rem">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy" style="text-align:center;padding:2.5rem 2rem">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic" style="font-size:2.2rem;text-align:center;letter-spacing:2px">
       أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ
     </div>
@@ -39,7 +44,7 @@ export function render(outlet) {
     <div class="hadith-text">"Whoever dies knowing that there is no god but Allah will enter Paradise." — The Prophet Muhammad ﷺ</div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Two parts -->
   <span class="eyebrow">The Two Clauses</span>
@@ -57,7 +62,7 @@ export function render(outlet) {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Conditions -->
   <span class="eyebrow">Conditions of Validity</span>
@@ -81,14 +86,17 @@ export function render(outlet) {
       </div>`).join('')}
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Tawhid explained -->
   <span class="eyebrow">Tawhid — Divine Oneness</span>
   <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,1.9rem);margin-bottom:1rem">The three dimensions of Tawhid</h2>
 
-  <div class="quran-block">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ</div>
     <div class="quran-ref">Qur'an 112:1–2</div>
     <div class="quran-trans">"Say: He is Allah, [who is] One. Allah, the Eternal Refuge." — Surah Al-Ikhlas, described by the Prophet ﷺ as equal to one-third of the Qur'an in meaning (Sahih Bukhari 5015).</div>
@@ -118,7 +126,7 @@ export function render(outlet) {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- FAQ -->
   <span class="eyebrow">Common Questions</span>

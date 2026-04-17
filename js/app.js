@@ -52,13 +52,17 @@ function buildNav() {
     </div>
 
     <div class="nav-mobile-menu" id="mobile-menu">
+      <div class="corner-ornament top-left" aria-hidden="true"></div>
+      <div class="corner-ornament top-right" aria-hidden="true"></div>
+      <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+      <div class="corner-ornament bottom-right" aria-hidden="true"></div>
       <button class="nav-mobile-item" data-route="#/"><span class="icon">🏠</span> Home</button>
       <button class="nav-mobile-item" data-route="#/faith"><span class="icon">☪️</span> Faith (Shahada)</button>
       <button class="nav-mobile-item" data-route="#/prayer"><span class="icon">🕌</span> Prayer (Salah)</button>
       <button class="nav-mobile-item" data-route="#/zakat"><span class="icon">✦</span> Zakat</button>
       <button class="nav-mobile-item" data-route="#/fasting"><span class="icon">🌙</span> Fasting (Sawm)</button>
       <button class="nav-mobile-item" data-route="#/hajj"><span class="icon">🕋</span> Hajj</button>
-      <hr style="border:none;border-top:1px solid var(--border);margin:4px 0">
+      <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
       <button class="nav-mobile-item" data-route="#/inheritance"><span class="icon">⚖️</span> Inheritance Calculator</button>
       <button class="nav-mobile-item" data-route="#/about"><span class="icon">ℹ️</span> About</button>
     </div>
@@ -73,8 +77,10 @@ function buildNav() {
 // ── FOOTER ───────────────────────────────────────────────────────────────────
 function buildFooter() {
   const footer = document.getElementById('site-footer');
+  footer.style.position = 'relative';
   footer.innerHTML = `
-    <div class="footer-inner">
+    <div class="bg-kufic-grid dark" aria-hidden="true"></div>
+    <div class="footer-inner" style="position:relative; z-index:1;">
       <div class="footer-top">
         <div class="footer-brand">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">

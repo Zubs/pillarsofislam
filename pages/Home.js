@@ -11,6 +11,9 @@ export function render(outlet) {
   outlet.innerHTML = `
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
 <section class="hero-section">
+  <div class="bg-kufic-grid" aria-hidden="true"></div>
+  <div class="ornament-hanging left" aria-hidden="true"></div>
+  <div class="ornament-hanging right" aria-hidden="true"></div>
   ${geoPattern()}
   <div class="hero-inner">
     <div>
@@ -48,8 +51,11 @@ export function render(outlet) {
         <div style="font-size:14px;color:var(--muted)">${hijri.formatted}</div>
       </div>
       <!-- Quran verse -->
-      <div class="quran-block" style="margin:0">
-        ${geoPattern()}
+      <div class="quran-block frame-calligraphy" style="margin:0">
+        <div class="corner-ornament top-left" aria-hidden="true"></div>
+        <div class="corner-ornament top-right" aria-hidden="true"></div>
+        <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+        <div class="corner-ornament bottom-right" aria-hidden="true"></div>
         <div class="quran-arabic">وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ</div>
         <div class="quran-ref">Qur'an 2:43</div>
         <div class="quran-trans">"Establish prayer and give Zakat." — The two pillars most frequently paired in the Qur'an.</div>
@@ -167,7 +173,9 @@ export function render(outlet) {
 <!-- ══ CTA ════════════════════════════════════════════════════════ -->
 <section class="section">
   <div class="section-wide">
-    <div class="cta-strip">
+    <div class="cta-strip" style="position:relative">
+      <div class="ornament-hanging left" aria-hidden="true" style="top:-32px; height:60px"></div>
+      <div class="ornament-hanging right" aria-hidden="true" style="top:-32px; height:60px"></div>
       ${geoPattern()}
       <h2>Begin with the first pillar</h2>
       <p>Start with Shahada — the declaration that anchors everything else — and work through each pillar with depth and understanding.</p>

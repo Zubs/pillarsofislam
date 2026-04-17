@@ -17,7 +17,9 @@ function buildHTML() {
   const daysLeft  = Math.round(daysToRamadan());
 
   return `
-<div class="page-header pillar-header-fasting">
+<div class="page-header pillar-header-fasting" style="position:relative">
+  <div class="ornament-hanging left" aria-hidden="true" style="opacity:0.3"></div>
+  <div class="ornament-hanging right" aria-hidden="true" style="opacity:0.3"></div>
   ${geoPattern()}
   <div class="page-header-inner">
     <div class="pillar-num-badge" style="background:var(--fasting-light);color:var(--fasting-color)">Pillar 4 of 5 &nbsp;·&nbsp; الصوم</div>
@@ -28,8 +30,11 @@ function buildHTML() {
 
 <div class="content-narrow">
 
-  <div class="quran-block">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ</div>
     <div class="quran-ref">Qur'an 2:183</div>
     <div class="quran-trans">"O you who have believed, decreed upon you is fasting as it was decreed upon those before you so that you may become righteous (muttaqin)."</div>
@@ -100,7 +105,7 @@ function buildHTML() {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Educational -->
   <span class="eyebrow">What is Sawm?</span>
@@ -115,7 +120,7 @@ function buildHTML() {
     <div class="hadith-text">"Every deed of the son of Adam is for him except fasting — it is for Me and I shall reward it. Fasting is a shield." — Allah says (in a Qudsi hadith narrated by Abu Hurayrah RA)</div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Conditions and types -->
   <span class="eyebrow">Rulings</span>
@@ -146,14 +151,17 @@ function buildHTML() {
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Virtues of Ramadan -->
   <span class="eyebrow">Virtues of Ramadan</span>
   <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,1.9rem);margin-bottom:1rem">The blessed month</h2>
 
-  <div class="quran-block">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ</div>
     <div class="quran-ref">Qur'an 2:185</div>
     <div class="quran-trans">"The month of Ramadan in which was revealed the Qur'an, a guidance for the people and clear proofs of guidance and criterion." — The Qur'an was first revealed in Ramadan, making it the most sacred month.</div>
@@ -166,7 +174,7 @@ function buildHTML() {
     <div class="tl-item"><div class="tl-marker">🤲</div><div class="tl-content"><h4>Itikaf (Seclusion)</h4><p>The Prophet ﷺ used to spend the last ten days of Ramadan in the mosque in seclusion (itikaf), seeking Laylat al-Qadr through prayer and remembrance.</p></div></div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <div class="faq-list" id="faq-fasting">
     ${[
