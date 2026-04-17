@@ -1,0 +1,160 @@
+/* ════════════════════════════════════════════════
+   KUFIC & CALLIGRAPHY ORNAMENTS SYSTEM
+   ════════════════════════════════════════════════ */
+
+/* ── 1. Hanging Ornaments ────────────────────────────────────────── */
+/* A subtle vertical drop line with geometric finial, to hang from top-edges */
+.ornament-hanging {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--gold) 0%, rgba(196, 147, 42, 0) 100%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 10;
+}
+.ornament-hanging::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  opacity: 0.8;
+}
+
+/* Placements */
+.ornament-hanging.left { left: var(--space-8); }
+.ornament-hanging.right { right: var(--space-8); }
+
+@media (max-width: 768px) {
+  .ornament-hanging { height: 50px; opacity: 0.4; }
+  .ornament-hanging.left { left: var(--space-5); }
+  .ornament-hanging.right { right: var(--space-5); }
+}
+
+/* ── 2. Kufic Divider ────────────────────────────────────────────── */
+/* Elegant geometric dividing line replacing <hr> */
+.divider-kufic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-8) 0;
+  position: relative;
+  opacity: 0.7;
+}
+.divider-kufic::before, .divider-kufic::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.divider-kufic-icon {
+  margin: 0 var(--space-4);
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.divider-kufic-icon::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+}
+
+/* ── 3. Calligraphy Frame ────────────────────────────────────────── */
+/* Used to box important Quran verses or methodology quotes */
+.frame-calligraphy {
+  position: relative;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.5rem !important;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.frame-calligraphy::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(196, 147, 42, 0.2); /* Soft gold inner border */
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: -1;
+}
+/* Corner accents for the frame */
+.frame-calligraphy::after {
+  content: '';
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border-top: 1px solid rgba(196, 147, 42, 0.4);
+  border-bottom: 1px solid rgba(196, 147, 42, 0.4);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  pointer-events: none;
+  z-index: -1;
+  mask-image: linear-gradient(to right, black 10px, transparent 10px, transparent calc(100% - 10px), black calc(100% - 10px));
+  -webkit-mask-image: linear-gradient(to right, black 10px, transparent 10px, transparent calc(100% - 10px), black calc(100% - 10px));
+}
+
+.frame-calligraphy > .quran-arabic {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--green);
+  line-height: 1.6;
+}
+
+/* ── 4. Background Kufic Grid ────────────────────────────────────── */
+/* Subtle geometric tile repeating for empty spaces / footers */
+.bg-kufic-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.25;
+  /* An 8-point geometric star base64 pattern */
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2.5 17.5L40 20l-17.5 2.5L20 40l-2.5-17.5L0 20l17.5-2.5z' fill='none' stroke='%23C4932A' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+.bg-kufic-grid.dark {
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2.5 17.5L40 20l-17.5 2.5L20 40l-2.5-17.5L0 20l17.5-2.5z' fill='none' stroke='%23FFFFFF' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
+}
+
+/* ── 5. Reusable Corner Ornaments ────────────────────────────────── */
+.corner-ornament {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.5;
+}
+.corner-ornament.top-left {
+  top: 0; left: 0;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+.corner-ornament.top-right {
+  top: 0; right: 0;
+  border-top: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+}
+.corner-ornament.bottom-left {
+  bottom: 0; left: 0;
+  border-bottom: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+.corner-ornament.bottom-right {
+  bottom: 0; right: 0;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+}
