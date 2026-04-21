@@ -117,7 +117,7 @@ function buildHTML() {
 
   <div class="hadith-block" style="margin-top:1.5rem">
     <div class="hadith-source">Sahih Bukhari 1904 · Sahih Muslim 1151</div>
-    <div class="hadith-text">"Every deed of the son of Adam is for him except fasting — it is for Me and I shall reward it. Fasting is a shield." — Allah says (in a Qudsi hadith narrated by Abu Hurayrah RA)</div>
+    <div class="hadith-text">"Every deed of the son of Adam is for him except fasting — it is for Me and I shall reward it. Fasting is a shield." — Hadith Qudsi, narrated by Abu Hurayrah RA</div>
   </div>
 
   <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>

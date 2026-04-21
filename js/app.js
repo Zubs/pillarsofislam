@@ -65,6 +65,7 @@ function buildNav() {
       <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
       <button class="nav-mobile-item" data-route="#/inheritance"><span class="icon">⚖️</span> Inheritance Calculator</button>
       <button class="nav-mobile-item" data-route="#/about"><span class="icon">ℹ️</span> About</button>
+      <button class="nav-mobile-item" data-route="#/changelog"><span class="icon">📋</span> Changelog</button>
     </div>
   `;
 
@@ -112,6 +113,7 @@ function buildFooter() {
         <div class="footer-col">
           <h4>More</h4>
           <button data-route="#/about">About</button>
+          <button data-route="#/changelog">Changelog</button>
           <button data-route="#/">Home</button>
         </div>
       </div>
@@ -151,6 +153,35 @@ export function geoPattern() {
   </svg></div>`;
 }
 
+// ── Scroll-reveal animations ──────────────────────────────────────────────────
+export function initScrollAnimations() {
+  const selector = [
+    '.quran-block', '.hadith-block',
+    '.card-grid', '.timeline',
+    '.faq-list', '.cta-strip',
+    '.pillars-hub', '.tools-strip',
+    '.hero-stats', '.divider-kufic',
+  ].join(',');
+
+  const elements = document.querySelectorAll(selector);
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('anim-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -32px 0px' });
+
+  elements.forEach((el, i) => {
+    el.classList.add('anim-target');
+    el.style.setProperty('--stagger', `${(i % 5) * 70}ms`);
+    observer.observe(el);
+  });
+}
+
 // ── FAQ helper ────────────────────────────────────────────────────────────────
 export function initFaqs(container) {
   container.querySelectorAll('.faq-q').forEach(btn => {
@@ -184,10 +215,13 @@ export function bootstrap() {
     '#/hajj':       () => import('../pages/pillar/Hajj.js'),
     '#/inheritance':() => import('../pages/tools/Inheritance.js'),
     '#/about':      () => import('../pages/tools/About.js'),
+    '#/changelog':  () => import('../pages/tools/Changelog.js'),
   }, outlet);
 
   bindNavigation(router);
   fetchPrices();
+
+  router.afterRender = initScrollAnimations;
 
   return router;
 }

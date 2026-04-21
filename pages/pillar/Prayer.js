@@ -240,11 +240,13 @@ function initPrayerTool() {
     banner.style.display = '';
     document.getElementById('next-prayer-name').textContent = next.label;
 
-    // Countdown — update every second
+    // Countdown — recalculate remaining time each tick so it actually counts down
     clearInterval(window._prayerTimer);
     function updateCountdown() {
-      const h = Math.floor(next.minsRemaining / 60);
-      const m = next.minsRemaining % 60;
+      const live = getNextPrayer(times);
+      const h = Math.floor(live.minsRemaining / 60);
+      const m = live.minsRemaining % 60;
+      document.getElementById('next-prayer-name').textContent = live.label;
       document.getElementById('next-prayer-countdown').textContent =
         h > 0 ? `${h}h ${m}m` : `${m} min`;
     }

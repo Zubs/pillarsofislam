@@ -49,6 +49,9 @@ export class Router {
 
     // Fade in
     this.outlet.style.opacity = '1';
+
+    // Run post-render hooks (animations etc.)
+    if (this.afterRender) this.afterRender();
     this.current = hash;
 
     // Update active nav
