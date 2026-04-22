@@ -19,19 +19,24 @@ function buildHTML() {
   }
 
   return `
-<div class="page-header" style="background:var(--ink);border-bottom:3px solid var(--gold)">
+<div class="page-header" style="background:var(--ink);border-bottom:3px solid var(--gold);position:relative">
+  <div class="ornament-hanging left" aria-hidden="true" style="opacity:0.3"></div>
+  <div class="ornament-hanging right" aria-hidden="true" style="opacity:0.3"></div>
   ${geoPattern()}
   <div class="page-header-inner">
     <div class="pillar-num-badge" style="background:var(--gold-light);color:var(--gold)">Islamic Tool &nbsp;·&nbsp; الميراث</div>
     <h1>Fara'id — Islamic Inheritance Calculator</h1>
-    <p>Calculate the Qur'anic shares of inheritance (fara'id) based on the heirs present. Each heir's share is derived directly from Qur'an 4:11–12 and 4:176.</p>
+    <p>Calculate the Qur'anic shares of inheritance based on the heirs present. Each share is derived directly from Qur'an 4:11–12 and 4:176.</p>
   </div>
 </div>
 
 <div class="content-wrap" style="max-width:1100px">
 
-  <div class="quran-block" style="max-width:860px">
-    ${geoPattern()}
+  <div class="quran-block frame-calligraphy" style="max-width:860px;margin-left:auto;margin-right:auto">
+    <div class="corner-ornament top-left" aria-hidden="true"></div>
+    <div class="corner-ornament top-right" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-left" aria-hidden="true"></div>
+    <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">يُوصِيكُمُ اللَّهُ فِي أَوْلَادِكُمْ ۖ لِلذَّكَرِ مِثْلُ حَظِّ الْأُنثَيَيْنِ</div>
     <div class="quran-ref">Qur'an 4:11</div>
     <div class="quran-trans">"Allah instructs you concerning your children: for the male, what is equal to the share of two females." — The foundational verse of Islamic inheritance law.</div>
@@ -43,23 +48,23 @@ function buildHTML() {
     <div>
       <span class="eyebrow">Step 1</span>
       <h2 class="section-title" style="font-size:clamp(1.4rem,2.5vw,1.8rem);margin-bottom:.75rem">Select the heirs present</h2>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:1.5rem">Toggle each heir present in the estate. For heirs where count matters (e.g. multiple wives, sons), enter the number.</p>
+      <p class="prose" style="font-size:15px;margin-bottom:1.5rem">Toggle each heir present in the estate. For heirs where count matters (multiple wives, sons, daughters), enter the number.</p>
 
       <!-- Estate value -->
-      <div class="card" style="margin-bottom:1.25rem">
+      <div class="card" style="margin-bottom:1.5rem">
         <div class="field">
           <label>Total estate value (after debts &amp; funeral expenses)</label>
           <div class="pfx-wrap">
             <span class="pfx" id="inh-sym">${state.sym}</span>
             <input type="number" class="input-field" id="estate-val" value="100000" min="0" step="1000">
           </div>
-          <div class="hint">Zakat on any zakatable portions should be calculated separately</div>
+          <div class="hint">Zakat on zakatable portions should be calculated separately</div>
         </div>
       </div>
 
       ${Object.entries(groups).map(([group, heirs]) => `
-        <div style="margin-bottom:1.25rem">
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:8px">${group}</div>
+        <div style="margin-bottom:1.5rem">
+          <span class="eyebrow" style="margin-bottom:10px;display:block">${group}</span>
           ${heirs.map(def => `
             <div class="heir-toggle" id="heir-row-${def.key}">
               <div class="heir-info">
@@ -79,7 +84,7 @@ function buildHTML() {
     <div style="position:sticky;top:84px">
       <div class="inheritance-results" id="inh-results">
         <div class="inh-title">Inheritance Breakdown</div>
-        <div id="inh-rows" style="color:rgba(255,255,255,.5);font-size:14px;text-align:center;padding:1rem 0">
+        <div id="inh-rows" style="color:rgba(255,255,255,.45);font-size:14px;text-align:center;padding:1.25rem 0">
           Select heirs on the left to calculate shares
         </div>
         <div id="inh-total" style="display:none;border-top:1px solid rgba(255,255,255,.12);margin-top:1rem;padding-top:1rem">
@@ -90,15 +95,15 @@ function buildHTML() {
         </div>
       </div>
 
-      <div class="card" style="margin-top:1rem;border-color:#E0C87A;background:var(--gold-light)">
+      <div class="card card-gold" style="margin-top:1rem;border-color:#E0C87A">
         <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#7A5A10;margin-bottom:6px">⚠ Important note</div>
-        <p style="font-size:13px;color:#5A3E0A;line-height:1.6">Inheritance law is complex. This calculator covers standard cases based on Hanafi fiqh with reference to the Qur'an. For non-standard situations (multiple marriages, missing heirs, disputes), consult a qualified Islamic scholar or mufti.</p>
+        <p style="font-size:13.5px;color:#5A3E0A;line-height:1.65">Inheritance law is complex. This calculator covers standard Hanafi cases with Qur'anic references. For non-standard situations — multiple marriages, missing heirs, disputes — consult a qualified Islamic scholar or mufti.</p>
       </div>
     </div>
 
   </div><!-- inh-layout -->
 
-  <div class="divider" style="max-width:860px;margin-top:2.5rem"></div>
+  <div class="divider-kufic" style="max-width:860px;margin:2.5rem auto" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
 
   <!-- Education -->
   <div style="max-width:860px">
@@ -114,8 +119,11 @@ function buildHTML() {
       <div class="hadith-text">"Learn the Fara'id (laws of inheritance) and teach them, for it is half of knowledge, and it will be forgotten. It is the first thing that will be taken away from my nation." — The Prophet Muhammad ﷺ</div>
     </div>
 
+    <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
+
     <!-- Fixed shares table -->
-    <h3 style="font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:1rem;margin-top:1.5rem">Fixed Qur'anic shares at a glance</h3>
+    <span class="eyebrow">Quick reference</span>
+    <h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:600;margin-bottom:1rem;margin-top:.25rem">Fixed Qur'anic shares at a glance</h3>
     <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem">
       <table style="width:100%;border-collapse:collapse;font-size:13.5px">
         <thead>

@@ -59,6 +59,9 @@ export function render(outlet) {
           <li><strong>Hadith Qudsi attribution wording</strong> — The fasting hadith attribution was reworded from "Allah says (in a Qudsi hadith narrated by Abu Hurayrah RA)" to the cleaner "Hadith Qudsi, narrated by Abu Hurayrah RA".</li>
         </ul>`)}
 
+      ${entry('⚖️', 'gold', 'Inheritance calculator — UI consistency',
+        'Rebuilt the Inheritance page layout to match the visual language of the pillar pages. Changes: page header now uses hanging ornament divs and <em>position:relative</em> for ornament anchoring; the Qur\'anic verse block converted from dark <em>.quran-block</em> to the light <em>.frame-calligraphy</em> style with all four corner accents; group labels upgraded to the <em>.eyebrow</em> class; the plain section divider replaced with <em>.divider-kufic</em>; the "Important note" sidebar card uses <em>.card-gold</em> with consistent type sizing; and a "Quick reference" eyebrow label was added above the fixed shares table.')}
+
     </div>
   </div>
 

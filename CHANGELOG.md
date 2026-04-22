@@ -26,6 +26,7 @@ All notable changes to IslamicHub are documented here.
 - **Sahih Muslim 29 → 26** *(Faith page)* — Hadith of Uthman ibn Affan RA: *"Whoever dies knowing that there is no god but Allah will enter Paradise."* Correct citation in Sahih Muslim is hadith **26**.
 - **Sahih Bukhari 5015 → 6267** *(Faith page)* — Hadith that Surah Al-Ikhlas equals one-third of the Qur'an. Correct Bukhari number in the standard Arabic-edition numbering is **6267**.
 - **Hadith Qudsi attribution** *(Fasting page)* — Attribution reworded from *"Allah says (in a Qudsi hadith narrated by Abu Hurayrah RA)"* to the cleaner *"Hadith Qudsi, narrated by Abu Hurayrah RA"*.
+- **Inheritance calculator UI** *(Inheritance page)* — Rebuilt page layout to match the visual language of the pillar pages: page header uses `position:relative` with hanging ornament divs; Qur'anic verse block converted from dark `.quran-block` to light `.frame-calligraphy` with four corner accents; group labels upgraded to `.eyebrow` class; plain `.divider` replaced with `.divider-kufic`; "Important note" sidebar uses `.card-gold` with consistent type sizing; "Quick reference" eyebrow label added above the fixed shares table.
 
 ---
 
