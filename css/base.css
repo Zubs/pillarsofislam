@@ -1,11 +1,14 @@
 /* ── Reset ─────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
 body {
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231B5C42'%3E%3Crect x='25' y='25' width='50' height='50' stroke-width='0.55' opacity='0.38' transform='rotate(45 50 50)'/%3E%3Crect x='25' y='25' width='50' height='50' stroke-width='0.55' opacity='0.22'/%3E%3Cline x1='50' y1='0' x2='50' y2='25' stroke-width='0.4' opacity='0.18'/%3E%3Cline x1='50' y1='75' x2='50' y2='100' stroke-width='0.4' opacity='0.18'/%3E%3Cline x1='0' y1='50' x2='25' y2='50' stroke-width='0.4' opacity='0.18'/%3E%3Cline x1='75' y1='50' x2='100' y2='50' stroke-width='0.4' opacity='0.18'/%3E%3C/g%3E%3Crect x='47.5' y='47.5' width='5' height='5' fill='none' stroke='%23C4932A' stroke-width='0.4' opacity='0.22' transform='rotate(45 50 50)'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--sans);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
   padding-top: var(--nav-height);
 }
@@ -27,7 +30,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
 /* ── Page header ───────────────────────────────── */
 .page-header {
   background: var(--ink);
-  padding: var(--space-12) var(--space-8) var(--space-8);
+  padding: var(--space-16) var(--space-8) var(--space-12);
   position: relative;
   overflow: hidden;
 }
@@ -39,16 +42,17 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
 }
 .page-header h1 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
   font-weight: 600;
   color: #fff;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  line-height: 1.08;
 }
 .page-header p {
-  font-size: 16px;
-  color: rgba(255,255,255,.55);
-  max-width: 560px;
-  line-height: 1.7;
+  font-size: 17.5px;
+  color: rgba(255,255,255,.6);
+  max-width: 600px;
+  line-height: 1.72;
 }
 .page-eyebrow {
   display: block;
@@ -83,9 +87,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
   margin-bottom: var(--space-4);
 }
 .section-sub {
-  font-size: 16.5px;
+  font-size: 17.5px;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.78;
   max-width: 580px;
 }
 
@@ -113,9 +117,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
 
 /* ── Prose ─────────────────────────────────────── */
 .prose {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--muted);
-  line-height: 1.85;
+  line-height: 1.88;
 }
 .prose p { margin-bottom: 1.1rem; }
 .prose p:last-child { margin-bottom: 0; }
@@ -131,12 +135,12 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
   overflow: hidden;
 }
 .quran-arabic {
-  font-family: var(--serif);
-  font-size: 1.55rem;
-  color: rgba(255,255,255,.92);
+  font-family: 'Amiri', var(--serif);
+  font-size: 1.7rem;
+  color: #fff;
   text-align: right;
   direction: rtl;
-  line-height: 2;
+  line-height: 2.1;
   margin-bottom: .75rem;
   position: relative;
   z-index: 1;
@@ -151,12 +155,15 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
   z-index: 1;
 }
 .quran-trans {
-  font-style: italic;
-  font-size: 14px;
-  color: rgba(255,255,255,.62);
-  line-height: 1.7;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.78;
   position: relative;
   z-index: 1;
+}
+/* Dark-background quran-block (no frame-calligraphy override) */
+.quran-block:not(.frame-calligraphy) .quran-trans {
+  color: rgba(255,255,255,.88);
 }
 
 /* ── Hadith block ──────────────────────────────── */
@@ -176,10 +183,10 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
   margin-bottom: .5rem;
 }
 .hadith-text {
-  font-size: 15px;
+  font-size: 16px;
   color: #3A2A08;
   font-style: italic;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* ── Info / feature cards ──────────────────────── */
@@ -371,4 +378,41 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; }
   .card-grid-2, .card-grid-3, .card-grid-4 { grid-template-columns: 1fr; }
   .field-grid, .field-grid-3 { grid-template-columns: 1fr; }
   .btn-lg { padding: 13px 24px; font-size: 15px; }
+}
+
+/* ── Animations ────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Page-header content entrance */
+.page-header-inner { animation: fadeUp .55s cubic-bezier(.4,0,.2,1) both; }
+
+/* Scroll-reveal targets */
+.anim-target {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity .55s cubic-bezier(.4,0,.2,1) var(--stagger, 0ms),
+    transform .55s cubic-bezier(.4,0,.2,1) var(--stagger, 0ms);
+  will-change: transform, opacity;
+}
+.anim-target.anim-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Quran block gold-border shimmer on entry */
+.quran-block.anim-visible {
+  animation: quranGlow .9s ease .3s both;
+}
+@keyframes quranGlow {
+  0%   { border-left-color: transparent; }
+  60%  { border-left-color: var(--gold); }
+  100% { border-left-color: var(--gold); }
 }

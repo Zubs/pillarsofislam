@@ -71,8 +71,9 @@ export function calcPrayerTimes(lat, lng, date, timezone, method = 'MWL') {
   const isha    = m.ishaMin ? sunset + m.isha / 60 : noon + hourAngle(-m.isha, decl, lat);
 
   // Asr (Shafi'i: shadow = object + 1; Hanafi: shadow = object + 2)
+  // Altitude angle is positive (sun above horizon), so no negation here.
   const asrFactor = 1; // 1 = Shafi'i, 2 = Hanafi
-  const asrAngle  = -RAD * Math.atan(1 / (asrFactor + tanD(Math.abs(lat - decl))));
+  const asrAngle  = RAD * Math.atan(1 / (asrFactor + tanD(Math.abs(lat - decl))));
   const asr       = noon + hourAngle(asrAngle, decl, lat);
 
   const toHHMM = h => {

@@ -40,8 +40,8 @@ export function render(outlet) {
   </div>
 
   <div class="hadith-block" style="margin-top:1.5rem">
-    <div class="hadith-source">Sahih Bukhari 128 · Sahih Muslim 29</div>
-    <div class="hadith-text">"Whoever dies knowing that there is no god but Allah will enter Paradise." — The Prophet Muhammad ﷺ</div>
+    <div class="hadith-source">Sahih Bukhari 128 · Sahih Muslim 26</div>
+    <div class="hadith-text">"Whoever dies knowing that there is no god but Allah will enter Paradise." — The Prophet Muhammad ﷺ (narrated by Uthman ibn Affan RA)</div>
   </div>
 
   <div class="divider-kufic" aria-hidden="true"><div class="divider-kufic-icon"></div></div>
@@ -51,7 +51,7 @@ export function render(outlet) {
   <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,1.9rem);margin-bottom:1.5rem">Understanding each part</h2>
   <div class="card-grid card-grid-2" style="gap:1rem">
     <div class="card card-green" style="border-color:#B0D8C4">
-      <div style="font-family:var(--serif);font-size:1.6rem;direction:rtl;text-align:right;margin-bottom:.75rem;color:var(--green)">لَا إِلَهَ إِلَّا اللَّهُ</div>
+      <div style="font-family:var(--arabic);font-size:1.65rem;direction:rtl;text-align:right;margin-bottom:.75rem;color:var(--green)">لَا إِلَهَ إِلَّا اللَّهُ</div>
       <h3 style="font-family:var(--serif);margin-bottom:.5rem;color:var(--green)">Lā ilāha illallāh</h3>
       <p style="font-size:13.5px;color:var(--muted);line-height:1.65">There is no god but Allah. This is <strong>Tawhid</strong> — the absolute oneness and uniqueness of God. It negates all false deities and affirms that worship belongs to Allah alone. This concept is the central axis of Islamic theology.</p>
     </div>
@@ -80,7 +80,7 @@ export function render(outlet) {
       ['7. Acceptance', 'قَبُول', 'Embracing everything the Shahada entails without rejection.'],
     ].map(([title, arabic, desc]) => `
       <div class="card">
-        <div style="font-family:var(--serif);font-size:1.3rem;color:var(--green);direction:rtl;margin-bottom:.4rem">${arabic}</div>
+        <div style="font-family:var(--arabic);font-size:1.35rem;color:var(--green);direction:rtl;margin-bottom:.4rem">${arabic}</div>
         <h4 style="font-family:var(--serif);font-size:.9rem;font-weight:600;margin-bottom:.4rem">${title}</h4>
         <p style="font-size:12.5px;color:var(--muted);line-height:1.5">${desc}</p>
       </div>`).join('')}
@@ -99,7 +99,7 @@ export function render(outlet) {
     <div class="corner-ornament bottom-right" aria-hidden="true"></div>
     <div class="quran-arabic">قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ</div>
     <div class="quran-ref">Qur'an 112:1–2</div>
-    <div class="quran-trans">"Say: He is Allah, [who is] One. Allah, the Eternal Refuge." — Surah Al-Ikhlas, described by the Prophet ﷺ as equal to one-third of the Qur'an in meaning (Sahih Bukhari 5015).</div>
+    <div class="quran-trans">"Say: He is Allah, [who is] One. Allah, the Eternal Refuge." — Surah Al-Ikhlas, described by the Prophet ﷺ as equal to one-third of the Qur'an in meaning (Sahih Bukhari 6267).</div>
   </div>
 
   <div class="timeline" style="margin-top:1.5rem">
