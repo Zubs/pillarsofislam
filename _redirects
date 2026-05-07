@@ -1,0 +1,6 @@
+# Netlify _redirects
+# Serve index.html for all routes so the SPA router handles them.
+# Hash-based routing (#/) is handled client-side, but this ensures
+# clean-URL deep links still load the app.
+
+/*    /index.html   200
