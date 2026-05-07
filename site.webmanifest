@@ -1,0 +1,44 @@
+{
+  "name": "IslamicHub — Five Pillars of Islam",
+  "short_name": "IslamicHub",
+  "description": "Islamic education and tools: prayer times, Zakat calculator, Qibla finder, and guides for all Five Pillars of Islam.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F3EC",
+  "theme_color": "#1B5C42",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["education", "religion", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "IslamicHub home page"
+    }
+  ]
+}
