@@ -1,58 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+    <!-- Home — Islamic education and tools hub -->
     <url>
         <loc>https://islamichub.xyz/</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://islamichub.xyz/"/>
     </url>
 
+    <!-- Faith / Shahada — first pillar, Tawhid -->
     <url>
         <loc>https://islamichub.xyz/#/faith</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
+    <!-- Prayer / Salah — prayer times, Qibla finder -->
     <url>
         <loc>https://islamichub.xyz/#/prayer</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.95</priority>
     </url>
 
+    <!-- Zakat — calculator with live gold & silver prices -->
     <url>
         <loc>https://islamichub.xyz/#/zakat</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.95</priority>
     </url>
 
+    <!-- Fasting / Sawm — Ramadan tracker, Suhoor & Iftar times -->
     <url>
         <loc>https://islamichub.xyz/#/fasting</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-05-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.85</priority>
     </url>
 
+    <!-- Hajj — complete pilgrimage rites guide -->
     <url>
         <loc>https://islamichub.xyz/#/hajj</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.85</priority>
     </url>
 
+    <!-- Inheritance / Fara'id calculator -->
     <url>
         <loc>https://islamichub.xyz/#/inheritance</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.85</priority>
     </url>
 
+    <!-- About — team, open source, methodology -->
     <url>
         <loc>https://islamichub.xyz/#/about</loc>
+        <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>https://islamichub.xyz/#/changelog</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
     </url>
 
 </urlset>
