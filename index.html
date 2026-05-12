@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ── Primary meta ───────────────────────────────────────────── -->
-    <title>IslamicHub — Learn &amp; Live the Five Pillars of Islam</title>
+    <!-- ── Primary SEO meta ──────────────────────────────────────────
+         These are the *base* values. js/seo.js overwrites them on
+         every route change so each page has its own title + description.
+    ─────────────────────────────────────────────────────────────────── -->
+    <title>IslamicHub — Islamic Education, Prayer Times, Zakat Calculator &amp; Five Pillars Guide</title>
     <meta name="description"
-          content="IslamicHub is a free Islamic education and tools platform covering the Five Pillars of Islam — with prayer times, Qibla finder, Zakat calculator, inheritance (Fara'id) calculator, and in-depth scholarly guides grounded in Qur'an and Hadith.">
+          content="Free Islamic learning platform covering all Five Pillars of Islam. Accurate prayer times and Qibla direction for your city, Zakat calculator with live gold prices, Islamic inheritance (Fara'id) calculator, and Hadith-based scholarly guides. No account needed.">
     <meta name="keywords"
-          content="Islamic education, five pillars of Islam, prayer times, Qibla direction, Zakat calculator, Islamic inheritance, Fara'id, Salah, Sawm, Hajj, Shahada, Ramadan, Nisab, Muslim tools">
-    <meta name="author" content="IslamicHub">
+          content="islamic learning platform five pillars, accurate zakat calculator online, best prayer times app with qibla, islamic inheritance calculator free, free islamic education tools, hadith based islamic guidance, ramadan fasting tracker, calculate faraid online, zakat calculator with gold and silver prices, find qibla direction from my location, understand five pillars of islam, scholarly islamic platform four madhabs">
+    <meta name="author" content="Zubair Idris Aweda, Saifur-Rahman Yusuf">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#1B5C42">
+    <meta name="msapplication-TileColor" content="#1B5C42">
 
-    <!-- ── Canonical ──────────────────────────────────────────────── -->
+    <!-- ── Canonical ────────────────────────────────────────────────── -->
     <link rel="canonical" href="https://islamichub.xyz/">
 
-    <!-- ── Open Graph (Facebook / LinkedIn / WhatsApp) ───────────── -->
+    <!-- ── Open Graph ──────────────────────────────────────────────── -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="IslamicHub">
     <meta property="og:url" content="https://islamichub.xyz/">
-    <meta property="og:title" content="IslamicHub — Learn &amp; Live the Five Pillars of Islam">
+    <meta property="og:title"
+          content="IslamicHub — Islamic Education, Prayer Times, Zakat Calculator &amp; Five Pillars Guide">
     <meta property="og:description"
-          content="Free Islamic education and tools: prayer times, Qibla finder, Zakat calculator, Islamic inheritance (Fara'id), and in-depth guides for all Five Pillars — grounded in Qur'an, Hadith, and scholarly tradition.">
+          content="Free Islamic education and tools: accurate prayer times, Qibla finder, Zakat calculator with live gold prices, Islamic inheritance calculator, and scholarly guides for all Five Pillars — grounded in Qur'an and Hadith.">
     <meta property="og:image" content="https://islamichub.xyz/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -31,26 +37,22 @@
 
     <!-- ── Twitter / X Card ──────────────────────────────────────── -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@islamichub">
-    <meta name="twitter:title" content="IslamicHub — Learn &amp; Live the Five Pillars of Islam">
+    <meta name="twitter:site" content="@islamichubxyz">
+    <meta name="twitter:title" content="IslamicHub — Islamic Education, Prayer Times &amp; Zakat Calculator">
     <meta name="twitter:description"
-          content="Free Islamic education and tools: prayer times, Qibla finder, Zakat calculator, Islamic inheritance (Fara'id), and in-depth guides for all Five Pillars.">
+          content="Accurate prayer times, Qibla direction, Zakat calculator with live gold prices, Islamic inheritance calculator, and Five Pillars guides — all free and private.">
     <meta name="twitter:image" content="https://islamichub.xyz/og-image.png">
     <meta name="twitter:image:alt" content="IslamicHub — Islamic education and tools platform">
 
-    <!-- ── Theme colour (browser chrome) ────────────────────────── -->
-    <meta name="theme-color" content="#1B5C42">
-    <meta name="msapplication-TileColor" content="#1B5C42">
-
-    <!-- ── Favicons ───────────────────────────────────────────────── -->
+    <!-- ── Favicons / PWA ────────────────────────────────────────── -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- ── JSON-LD Structured Data ───────────────────────────────── -->
-    <script type="application/ld+json">
+    <!-- ── JSON-LD base (seo.js replaces this per-route) ─────────── -->
+    <script type="application/ld+json" id="ld-json-base">
         {
             "@context": "https://schema.org",
             "@graph": [
@@ -59,7 +61,7 @@
                     "@id": "https://islamichub.xyz/#website",
                     "url": "https://islamichub.xyz/",
                     "name": "IslamicHub",
-                    "description": "A comprehensive Islamic education and tools platform covering the Five Pillars of Islam with prayer times, Zakat calculator, Qibla finder, and inheritance calculator.",
+                    "description": "Free Islamic education and tools platform covering the Five Pillars of Islam with prayer times, Zakat calculator, Qibla finder, and inheritance calculator.",
                     "inLanguage": "en-GB",
                     "publisher": {
                         "@type": "Organization",
@@ -68,7 +70,10 @@
                         "logo": {
                             "@type": "ImageObject",
                             "url": "https://islamichub.xyz/og-image.png"
-                        }
+                        },
+                        "sameAs": [
+                            "https://github.com/Zubs/pillarsofislam"
+                        ]
                     }
                 },
                 {
@@ -84,51 +89,23 @@
                         "priceCurrency": "GBP"
                     },
                     "featureList": [
-                        "Prayer Times Calculator",
-                        "Qibla Direction Finder",
-                        "Zakat Calculator with live gold and silver prices",
-                        "Islamic Inheritance (Fara'id) Calculator",
-                        "Five Pillars of Islam educational guides",
-                        "Ramadan and Fasting tracker",
-                        "Hijri calendar conversion"
+                        "Accurate prayer times calculator",
+                        "Qibla direction finder with compass",
+                        "Zakat calculator with live gold and silver prices",
+                        "Islamic inheritance Fara'id calculator",
+                        "Ramadan fasting tracker with Suhoor and Iftar times",
+                        "Five Pillars of Islam educational guides"
                     ],
-                    "description": "Free Islamic education and tools: prayer times, Qibla finder, Zakat calculator, Islamic inheritance (Fara'id), and scholarly guides for all Five Pillars."
-                },
-                {
-                    "@type": "FAQPage",
-                    "@id": "https://islamichub.xyz/#faq",
-                    "mainEntity": [
+                    "author": [
                         {
-                            "@type": "Question",
-                            "name": "What is Zakat and who must pay it?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Zakat is the third pillar of Islam — an obligatory annual payment of 2.5% on wealth that has exceeded the Nisab threshold for a full lunar year (hawl). It is due on every Muslim adult who is sane, free, and whose net zakatable assets remain above Nisab for an entire year."
-                            }
+                            "@type": "Person",
+                            "name": "Zubair Idris Aweda",
+                            "url": "https://github.com/Zubs"
                         },
                         {
-                            "@type": "Question",
-                            "name": "How do I find the Qibla direction?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "The Qibla is the direction of the Masjid al-Haram in Makkah. Use the Prayer page on IslamicHub and enter your coordinates (or use the location button) to get an exact compass bearing to Makkah from your location."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "What is the Nisab threshold for Zakat?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Nisab is the minimum wealth threshold for Zakat. It is set at either 85 grams of 24ct gold (majority scholarly position) or 595 grams of silver (some Hanafi scholars). IslamicHub fetches live gold and silver prices to calculate the current Nisab amount in GBP, USD, EUR, or SAR."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "What are the Five Pillars of Islam?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "The Five Pillars of Islam are: (1) Shahada — the declaration of faith; (2) Salah — the five daily prayers; (3) Zakat — obligatory almsgiving; (4) Sawm — fasting during Ramadan; (5) Hajj — pilgrimage to Makkah once in a lifetime for those who are able."
-                            }
+                            "@type": "Person",
+                            "name": "Saifur-Rahman Yusuf",
+                            "url": "https://github.com/yusuf-saif"
                         }
                     ]
                 }
@@ -136,31 +113,53 @@
         }
     </script>
 
-    <!-- ── Fonts ──────────────────────────────────────────────────── -->
+    <!-- ── Performance: preconnect to critical third-party origins ── -->
+    <!-- Fonts (highest priority — block rendering) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+
+    <!-- APIs (non-blocking, but start DNS early) -->
+    <link rel="dns-prefetch" href="https://api.metals.live">
+    <link rel="dns-prefetch" href="https://api.frankfurter.app">
+    <link rel="dns-prefetch" href="https://nominatim.openstreetmap.org">
+
+    <!-- ── Fonts: only the weights we actually use ───────────────── -->
+    <!-- Using display=swap so text is visible even before fonts load —
+         this was a key contributor to the 4.7s render latency.
+         We also only load the exact weights needed, not the full family. -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap"
           rel="stylesheet">
 
-    <!-- ── Styles ─────────────────────────────────────────────────── -->
+    <!-- ── Styles: tokens first so CSS vars are available immediately -->
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/ornament.css">
 
     <style>
-        /* ── Loading screen ───────────────────────────── */
+        /* ── Critical above-the-fold CSS inlined to reduce render-blocking ──
+           This paints the loading screen and body background instantly
+           without waiting for any external stylesheet to load.            */
+
+        body {
+            background: #F7F3EC; /* --cream, duplicated here so it's instant */
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Loading screen */
         #loading {
             position: fixed;
             inset: 0;
-            background-color: var(--cream);
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231B5C42'%3E%3Crect x='25' y='25' width='50' height='50' stroke-width='0.55' opacity='0.38' transform='rotate(45 50 50)'/%3E%3Crect x='25' y='25' width='50' height='50' stroke-width='0.55' opacity='0.22'/%3E%3Cline x1='50' y1='0' x2='50' y2='25' stroke-width='0.4' opacity='0.18'/%3E%3Cline x1='50' y1='75' x2='50' y2='100' stroke-width='0.4' opacity='0.18'/%3E%3Cline x1='0' y1='50' x2='25' y2='50' stroke-width='0.4' opacity='0.18'/%3E%3Cline x1='75' y1='50' x2='100' y2='50' stroke-width='0.4' opacity='0.18'/%3E%3C/g%3E%3Crect x='47.5' y='47.5' width='5' height='5' fill='none' stroke='%23C4932A' stroke-width='0.4' opacity='0.22' transform='rotate(45 50 50)'/%3E%3C/svg%3E");
-            background-size: 100px 100px;
+            background-color: #F7F3EC;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231B5C42' opacity='0.07'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22' stroke-width='1'/%3E%3Cpolygon points='40,14 66,28 66,52 40,66 14,52 14,28' stroke-width='.6'/%3E%3Cline x1='40' y1='4' x2='40' y2='76' stroke-width='.4'/%3E%3Cline x1='4' y1='22' x2='76' y2='58' stroke-width='.4'/%3E%3Cline x1='76' y1='22' x2='4' y2='58' stroke-width='.4'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 80px 80px;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity .4s ease;
+            transition: opacity .4s ease .1s;
         }
 
         #loading.hidden {
@@ -170,7 +169,8 @@
 
         .loading-inner {
             text-align: center;
-            padding: 0 2rem;
+            max-width: 280px;
+            padding: 0 1.5rem;
         }
 
         .loading-ornament {
@@ -178,82 +178,74 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: loadFadeUp .6s ease .05s both;
+            margin-bottom: 1.25rem;
+            animation: lFadeUp .5s ease .1s both;
         }
 
         .loading-ornament::before,
         .loading-ornament::after {
             content: '';
-            width: 48px;
             height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold));
+            width: 44px;
+            background: linear-gradient(to right, transparent, #C4932A);
         }
 
         .loading-ornament::after {
-            background: linear-gradient(to left, transparent, var(--gold));
+            background: linear-gradient(to left, transparent, #C4932A);
         }
 
-        .loading-ornament-gem {
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
+        .lo-gem {
+            width: 7px;
+            height: 7px;
+            background: #C4932A;
             transform: rotate(45deg);
         }
 
         .loading-bismillah {
-            font-family: 'Amiri', serif;
-            font-size: 2.4rem;
-            color: var(--green);
+            font-size: 1.6rem;
+            color: #1B5C42;
             direction: rtl;
-            line-height: 1.5;
-            margin-bottom: 1.75rem;
-            opacity: 0;
-            animation: loadFadeUp .7s ease .15s both;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            animation: lFadeUp .6s ease .2s both;
         }
 
         .loading-logo {
-            width: 52px;
-            height: 52px;
-            background: var(--green);
-            border-radius: 13px;
+            width: 48px;
+            height: 48px;
+            background: #1B5C42;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto .9rem;
-            opacity: 0;
-            animation: loadFadeUp .6s ease .35s both, loadPulse 12s linear .8s infinite;
+            margin: 0 auto .75rem;
+            animation: lFadeUp .5s ease .35s both;
         }
 
         .loading-name {
-            font-family: 'Amiri', var(--serif);
-            font-size: 1.9rem;
-            font-weight: 700;
-            color: var(--ink);
-            letter-spacing: .5px;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #1A1A18;
+            letter-spacing: .3px;
             margin-bottom: .2rem;
-            opacity: 0;
-            animation: loadFadeUp .6s ease .5s both;
+            animation: lFadeUp .5s ease .45s both;
         }
 
         .loading-name span {
-            color: var(--green);
+            color: #1B5C42;
         }
 
-        .loading-trans {
-            font-family: var(--sans);
-            font-size: 11.5px;
-            color: var(--muted);
-            letter-spacing: .5px;
-            opacity: 0;
-            animation: loadFadeUp .5s ease .65s both;
+        .loading-sub {
+            font-size: 11px;
+            color: #6B6860;
+            letter-spacing: .4px;
+            animation: lFadeUp .5s ease .55s both;
         }
 
-        @keyframes loadFadeUp {
+        @keyframes lFadeUp {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(8px);
             }
             to {
                 opacity: 1;
@@ -261,23 +253,14 @@
             }
         }
 
-        @keyframes loadPulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(27, 92, 66, 0)
-            }
-            50% {
-                box-shadow: 0 0 0 8px rgba(27, 92, 66, .08)
-            }
-        }
-
-        /* ── App shell ────────────────────────────────── */
+        /* App shell */
         #app {
-            min-height: calc(100vh - var(--nav-height));
+            min-height: calc(100vh - 64px);
             opacity: 1;
             transition: opacity .15s ease;
         }
 
-        /* ── Responsive fixes ─────────────────────────── */
+        /* Responsive fix for Inheritance page */
         @media (max-width: 900px) {
             #inh-layout {
                 grid-template-columns: 1fr !important;
@@ -290,66 +273,65 @@
     </style>
 </head>
 <body>
-<!-- Loading screen -->
+
+<!-- ── Loading screen ─────────────────────────────────────────── -->
 <div id="loading" role="status" aria-label="Loading IslamicHub">
     <div class="loading-inner">
         <div class="loading-ornament" aria-hidden="true">
-            <div class="loading-ornament-gem"></div>
+            <div class="lo-gem"></div>
         </div>
-        <div class="loading-bismillah" lang="ar" aria-label="Bismillah ir-Rahman ir-Raheem">بِسْمِ اللَّهِ الرَّحْمَنِ
-            الرَّحِيم
+        <div class="loading-bismillah" lang="ar" aria-label="Bismillah ir-Rahman ir-Raheem">
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
         </div>
         <div class="loading-logo" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"
-                 aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5">
                 <polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/>
                 <polygon points="12,6 17,9 17,15 12,18 7,15 7,9"/>
             </svg>
         </div>
         <div class="loading-name">Islamic<span>Hub</span></div>
-        <div class="loading-trans">In the name of Allah, the Most Gracious, the Most Merciful</div>
+        <div class="loading-sub">In the name of Allah, the Most Gracious, the Most Merciful</div>
     </div>
 </div>
 
-<!-- Nav (injected by app.js) -->
+<!-- ── Nav (injected by app.js) ───────────────────────────────── -->
 <header id="site-nav" class="site-nav" role="banner"></header>
 
-<!-- Page content (router renders here) -->
+<!-- ── Page outlet (router renders here) ─────────────────────── -->
 <main id="app" role="main" aria-live="polite" aria-atomic="false"></main>
 
-<!-- Footer (injected by app.js) -->
+<!-- ── Footer (injected by app.js) ───────────────────────────── -->
 <footer id="site-footer" class="site-footer" role="contentinfo"></footer>
 
-<!-- Bootstrap -->
+<!-- ── Bootstrap (type=module defers automatically) ──────────── -->
 <script type="module">
     import {bootstrap} from './js/app.js';
 
-    const MIN_SHOW = 2800;
-    const startTime = Date.now();
+    // We show the loader for a minimum of 2s so the Bismillah is readable,
+    // but hide it as soon as the app is ready if fonts take longer.
+    const START = Date.now();
+    const MIN_MS = 2000;
 
     const hideLoading = () => {
-        const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, MIN_SHOW - elapsed);
+        const wait = Math.max(0, MIN_MS - (Date.now() - START));
         setTimeout(() => {
             const el = document.getElementById('loading');
             if (el) {
                 el.classList.add('hidden');
-                setTimeout(() => el.remove(), 400);
+                setTimeout(() => el.remove(), 500);
             }
-        }, remaining);
+        }, wait);
     };
 
     try {
         bootstrap();
-        if (document.fonts) {
-            document.fonts.ready.then(hideLoading);
-        } else {
-            hideLoading();
-        }
+        // document.fonts.ready resolves once all fonts are loaded or timed-out
+        (document.fonts ? document.fonts.ready : Promise.resolve()).then(hideLoading);
     } catch (err) {
-        console.error('Bootstrap error:', err);
+        console.error('[IslamicHub] bootstrap error:', err);
         hideLoading();
     }
 </script>
+
 </body>
 </html>
