@@ -1,5 +1,4 @@
 // js/app.js — bootstrap: nav, footer, router
-
 import { Router } from './router.js';
 import { fetchPrices } from './state.js';
 
@@ -48,7 +47,7 @@ function buildNav() {
         <button class="nav-tools-btn" data-route="#/about"       aria-label="About IslamicHub">About</button>
         <a href="${GITHUB_REPO}" target="_blank" rel="noopener noreferrer"
            class="nav-tools-btn" aria-label="IslamicHub on GitHub"
-           style="display:flex;align-items:center;gap:5px;text-decoration:none">
+           style="display:inline-flex;align-items:center;gap:5px;text-decoration:none">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
           </svg>
@@ -62,6 +61,10 @@ function buildNav() {
     </div>
 
     <div class="nav-mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+      <div class="corner-ornament top-left"     aria-hidden="true"></div>
+      <div class="corner-ornament top-right"    aria-hidden="true"></div>
+      <div class="corner-ornament bottom-left"  aria-hidden="true"></div>
+      <div class="corner-ornament bottom-right" aria-hidden="true"></div>
       <button class="nav-mobile-item" data-route="#/">
         <span class="icon" aria-hidden="true">🏠</span> Home
       </button>
@@ -89,10 +92,15 @@ function buildNav() {
       <button class="nav-mobile-item" data-route="#/about">
         <span class="icon" aria-hidden="true">ℹ️</span> About &amp; Contributors
       </button>
+      <button class="nav-mobile-item" data-route="#/changelog">
+        <span class="icon" aria-hidden="true">📋</span> Changelog
+      </button>
       <a href="${GITHUB_REPO}" target="_blank" rel="noopener noreferrer"
          class="nav-mobile-item" style="text-decoration:none;color:inherit">
         <span class="icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
         </span> View source on GitHub
       </a>
     </div>
@@ -111,7 +119,11 @@ function buildNav() {
 function buildFooter() {
     const footer = document.getElementById('site-footer');
     footer.innerHTML = `
-    <div class="footer-inner">
+    <div class="bg-kufic-grid dark" aria-hidden="true"></div>
+    <div class="footer-inner" style="position:relative;z-index:1">
+      <div class="divider-kufic" style="margin-bottom:var(--space-8)" aria-hidden="true">
+        <span class="divider-kufic-icon"></span>
+      </div>
       <div class="footer-top">
         <div class="footer-brand">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem">
@@ -124,15 +136,12 @@ function buildFooter() {
             <span style="font-family:var(--serif);font-size:18px;font-weight:600;color:#fff">Islamic<span style="color:#8BC4A8">Hub</span></span>
           </div>
           <p>Free Islamic education and tools for the Muslim community — prayer times, Zakat calculator, Qibla finder, inheritance calculator, and scholarly guides for all Five Pillars.</p>
-
-          <!-- Social links — addressing Veesigro "social distribution" gap -->
           <div style="display:flex;gap:10px;margin-top:1rem;flex-wrap:wrap">
             <a href="${GITHUB_REPO}" target="_blank" rel="noopener noreferrer"
-               style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:rgba(255,255,255,.5);text-decoration:none;padding:5px 10px;border:1px solid rgba(255,255,255,.12);border-radius:8px;transition:all .15s"
-               onmouseover="this.style.color='rgba(255,255,255,.85)';this.style.borderColor='rgba(255,255,255,.3)'"
-               onmouseout="this.style.color='rgba(255,255,255,.5)';this.style.borderColor='rgba(255,255,255,.12)'"
-               aria-label="IslamicHub on GitHub">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+               class="footer-social-link" aria-label="IslamicHub on GitHub">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
               GitHub
             </a>
           </div>
@@ -159,6 +168,7 @@ function buildFooter() {
         <div class="footer-col">
           <h4>Project</h4>
           <button data-route="#/about">About &amp; Team</button>
+          <button data-route="#/changelog">Changelog</button>
           <a href="${GITHUB_REPO}" target="_blank" rel="noopener noreferrer"
              style="color:rgba(255,255,255,.4);text-decoration:none;font-size:13.5px;display:block;margin-bottom:.6rem">
             GitHub Repository
@@ -175,23 +185,40 @@ function buildFooter() {
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 IslamicHub — Built by <a href="https://github.com/Zubs" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.55);text-decoration:none">Zubair</a> &amp; <a href="https://github.com/yusuf-saif" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.55);text-decoration:none">Yusuf</a></span>
+        <span>© 2026 IslamicHub — Built by
+          <a href="https://github.com/Zubs" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.55);text-decoration:none">Zubair</a>
+          &amp;
+          <a href="https://github.com/yusuf-saif" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.55);text-decoration:none">Yusuf</a>
+        </span>
         <span style="direction:rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
       </div>
 
       <p class="footer-disc">Disclaimer: IslamicHub is an educational and guidance tool — not a fatwa or formal religious ruling. Prayer times are calculated astronomically and may differ from local mosque announcements. For personal religious rulings, consult a qualified Islamic scholar (mufti). Built with sincerity for the Muslim community.</p>
     </div>
+
+    <style>
+      .footer-social-link {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 12.5px; color: rgba(255,255,255,.5);
+        text-decoration: none; padding: 5px 10px;
+        border: 1px solid rgba(255,255,255,.12); border-radius: 8px;
+        transition: all .15s;
+      }
+      .footer-social-link:hover {
+        color: rgba(255,255,255,.85);
+        border-color: rgba(255,255,255,.3);
+      }
+    </style>
   `;
 }
 
-// ── DELEGATION — all [data-route] clicks ─────────────────────────────────────
+// ── CLICK DELEGATION — all [data-route] ──────────────────────────────────────
 export function bindNavigation(router) {
     document.addEventListener('click', e => {
         const el = e.target.closest('[data-route]');
         if (!el) {
           return;
         }
-
         e.preventDefault();
         router.navigate(el.dataset.route);
         document.getElementById('mobile-menu')?.classList.remove('open');
@@ -213,7 +240,23 @@ export function geoPattern() {
   </svg></div>`;
 }
 
-// ── FAQ initialiser ───────────────────────────────────────────────────────────
+// ── SCROLL ANIMATIONS ─────────────────────────────────────────────────────────
+export function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('anim-visible');
+                }, i * 70);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.1});
+
+    document.querySelectorAll('.anim-target').forEach(el => observer.observe(el));
+}
+
+// ── FAQ ACCORDIONS ────────────────────────────────────────────────────────────
 export function initFaqs(container) {
     if (!container) {
       return;
@@ -226,9 +269,8 @@ export function initFaqs(container) {
             const open = a.classList.contains('open');
             container.querySelectorAll('.faq-a.open').forEach(el => {
                 el.classList.remove('open');
-                el.previousElementSibling.querySelector('.faq-chev').classList.remove('open');
+                el.previousElementSibling.querySelector('.faq-chev')?.classList.remove('open');
             });
-
             if (!open) {
                 a.classList.add('open');
                 chev?.classList.add('open');
@@ -253,7 +295,11 @@ export function bootstrap() {
         '#/hajj': () => import('../pages/pillar/Hajj.js'),
         '#/inheritance': () => import('../pages/tools/Inheritance.js'),
         '#/about': () => import('../pages/tools/About.js'),
+        '#/changelog': () => import('../pages/tools/Changelog.js'), // ← restored
     }, outlet);
+
+    // Run scroll animations after every page render
+    router.afterRender = () => initScrollAnimations();
 
     bindNavigation(router);
     fetchPrices();
