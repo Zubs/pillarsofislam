@@ -65,7 +65,7 @@ export const ROUTE_SEO = {
 
     '#/about': {
         title: "About IslamicHub — Open Source Islamic Education Platform",
-        description: "IslamicHub is an open-source Islamic education platform built by Zubair Idris Aweda and Yusuf Saif. Learn about our mission, methodology, scholarly sources (Qur'an, Hadith, all four madhabs), and how to contribute to the project on GitHub.",
+        description: "IslamicHub is an open-source Islamic education platform built by Zubair Idris Aweda and Saifur-Rahman Yusuf. Learn about our mission, methodology, scholarly sources (Qur'an, Hadith, all four madhabs), and how to contribute to the project on GitHub.",
         keywords: 'about islamichub, open source islamic platform, scholarly islamic platform four madhabs, islamic education methodology, free islamic tools no tracking',
         canonical: `${BASE}/#/about`,
     },
@@ -120,7 +120,7 @@ function appSchema() {
         ],
         'author': [
             {'@type': 'Person', 'name': 'Zubair Idris Aweda', 'url': 'https://github.com/Zubs'},
-            {'@type': 'Person', 'name': 'Yusuf Saif', 'url': 'https://github.com/yusuf-saif'},
+            {'@type': 'Person', 'name': 'Saifur-Rahman Yusuf', 'url': 'https://github.com/yusuf-saif'},
         ],
     };
 }

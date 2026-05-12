@@ -13,7 +13,7 @@ const BUILDERS = [
     },
     {
         login: 'yusuf-saif',
-        name: 'Yusuf Saif',
+        name: 'Saifur-Rahman Yusuf',
         role: 'Project Manager & Technical Strategist',
         bio: 'Seasoned project manager with a robust background in technical solutions. Drives product direction, scholarly accuracy review, and ensures the platform stays true to its educational mission.',
         avatar: 'https://avatars.githubusercontent.com/u/54576722?v=4',

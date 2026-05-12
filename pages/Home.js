@@ -206,7 +206,7 @@ export function render(outlet) {
   <div class="section-wide">
     <span class="eyebrow">Open source project</span>
     <h2 class="section-title" id="team-heading" style="margin-bottom:.75rem">Built by the community, for the community</h2>
-    <p class="section-sub" style="margin-bottom:var(--space-8)">IslamicHub is open source, built by Zubair Idris Aweda and Yusuf Saif, and open to contributions from any Muslim who wants to help improve it.</p>
+    <p class="section-sub" style="margin-bottom:var(--space-8)">IslamicHub is open source, built by Zubair Idris Aweda and Saifur-Rahman Yusuf, and open to contributions from any Muslim who wants to help improve it.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:640px" class="mini-builders-grid">
       ${[
         {
@@ -216,7 +216,7 @@ export function render(outlet) {
             avatar: 'https://avatars.githubusercontent.com/u/53227444?v=4'
         },
         {
-            name: 'Yusuf Saif',
+            name: 'Saifur-Rahman Yusuf',
             role: 'Project Manager & Technical Strategist',
             login: 'yusuf-saif',
             avatar: 'https://avatars.githubusercontent.com/u/54576722?v=4'
