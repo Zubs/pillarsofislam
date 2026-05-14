@@ -266,8 +266,15 @@ function initPrayerTool() {
     const calcBtn = document.getElementById('pt-calc');
     const statusEl = document.getElementById('pt-location-status');
 
-    // Pre-fill from shared state if location already known
-    if (state.location) {
+    // Restore from localStorage, falling back to shared state
+    const STORAGE_KEY = 'ih_prayer_loc';
+    const saved = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch { return null; } })();
+    if (saved) {
+        latEl.value = saved.lat;
+        lngEl.value = saved.lng;
+        if (saved.method) methEl.value = saved.method;
+        calculate();
+    } else if (state.location) {
         latEl.value = state.location.lat;
         lngEl.value = state.location.lng;
         calculate();
@@ -350,5 +357,7 @@ function initPrayerTool() {
         if (tail) {
             tail.style.transform = `rotate(${bearing}deg)`;
         }
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ lat, lng, method: methEl.value }));
     }
 }

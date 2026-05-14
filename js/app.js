@@ -113,6 +113,24 @@ function buildNav() {
         const isOpen = mobileMenu.classList.toggle('open');
         hamburger.setAttribute('aria-expanded', String(isOpen));
     });
+
+    // Close menu when viewport grows past the mobile breakpoint
+    const mq = window.matchMedia('(max-width: 900px)');
+    mq.addEventListener('change', e => {
+        if (!e.matches) {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close menu on Escape (any screen size)
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.focus();
+        }
+    });
 }
 
 // ── FOOTER ───────────────────────────────────────────────────────────────────
