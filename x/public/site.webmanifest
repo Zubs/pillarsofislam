@@ -1,0 +1,75 @@
+{
+  "name": "IslamicHub — Five Pillars of Islam",
+  "short_name": "IslamicHub",
+  "description": "Free Islamic education and tools: prayer times, Zakat calculator, Qibla finder, Islamic inheritance calculator, and guides for all Five Pillars of Islam.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F7F3EC",
+  "theme_color": "#1B5C42",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["education", "religion", "utilities"],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Prayer Times",
+      "short_name": "Prayer",
+      "description": "Get prayer times and Qibla direction for your location",
+      "url": "/#/prayer",
+      "icons": [{ "src": "/favicon-32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Zakat Calculator",
+      "short_name": "Zakat",
+      "description": "Calculate your annual Zakat with live gold prices",
+      "url": "/#/zakat",
+      "icons": [{ "src": "/favicon-32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Inheritance Calculator",
+      "short_name": "Fara'id",
+      "description": "Calculate Islamic inheritance shares",
+      "url": "/#/inheritance",
+      "icons": [{ "src": "/favicon-32.png", "sizes": "32x32" }]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "IslamicHub home — Islamic education and tools hub"
+    }
+  ]
+}
