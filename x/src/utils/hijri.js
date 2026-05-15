@@ -1,9 +1,7 @@
-// js/utils/hijri.js — Gregorian ↔ Hijri calendar conversion
-
 const HIJRI_MONTHS = [
-  'Muharram','Ṣafar','Rabīʿ al-Awwal','Rabīʿ al-Thāni',
-  'Jumādā al-Ūlā','Jumādā al-Ākhirah','Rajab','Shaʿbān',
-  'Ramaḍān','Shawwāl','Dhū al-Qaʿdah','Dhū al-Ḥijjah'
+  'Muharram', 'Ṣafar', 'Rabīʿ al-Awwal', 'Rabīʿ al-Thāni',
+  'Jumādā al-Ūlā', 'Jumādā al-Ākhirah', 'Rajab', 'Shaʿbān',
+  'Ramaḍān', 'Shawwāl', 'Dhū al-Qaʿdah', 'Dhū al-Ḥijjah'
 ];
 
 export function toHijri(date = new Date()) {
@@ -12,7 +10,11 @@ export function toHijri(date = new Date()) {
   let d = date.getDate();
   let y = date.getFullYear();
 
-  if (m < 3) { y -= 1; m += 12; }
+  if (m < 3) {
+    y -= 1;
+    m += 12;
+  }
+
   const A = Math.floor(y / 100);
   const B = 2 - A + Math.floor(A / 4);
   const JD = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + d + B - 1524.5;
@@ -21,9 +23,9 @@ export function toHijri(date = new Date()) {
   const K = Math.floor(Z);
   const R = Z - K;
 
-  const hDay   = Math.floor(R * 29.53059) + 1;
+  const hDay = Math.floor(R * 29.53059) + 1;
   const hMonth = ((K % 12) + 12) % 12 + 1;
-  const hYear  = Math.floor(K / 12) + 1;
+  const hYear = Math.floor(K / 12) + 1;
 
   return {
     day: hDay,
@@ -45,7 +47,11 @@ export function daysToRamadan() {
     const monthsLeft = 9 - today.month - 1;
     return daysLeft + monthsLeft * 29.5;
   }
-  if (today.month === 9) return 0; // It's Ramadan!
+
+  if (today.month === 9) {
+    return 0;
+  } // It's Ramadan!
+
   // Past Ramadan — count to next year's
   const daysLeft = 30 - today.day;
   const monthsLeft = 12 - today.month + 8; // to month 9 next year

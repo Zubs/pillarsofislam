@@ -14,6 +14,7 @@
   pointer-events: none;
   z-index: 10;
 }
+
 .ornament-hanging::after {
   content: '';
   position: absolute;
@@ -27,13 +28,27 @@
 }
 
 /* Placements */
-.ornament-hanging.left { left: var(--space-8); }
-.ornament-hanging.right { right: var(--space-8); }
+.ornament-hanging.left {
+  left: var(--space-8);
+}
+
+.ornament-hanging.right {
+  right: var(--space-8);
+}
 
 @media (max-width: 768px) {
-  .ornament-hanging { height: 50px; opacity: 0.4; }
-  .ornament-hanging.left { left: var(--space-5); }
-  .ornament-hanging.right { right: var(--space-5); }
+  .ornament-hanging {
+    height: 50px;
+    opacity: 0.4;
+  }
+
+  .ornament-hanging.left {
+    left: var(--space-5);
+  }
+
+  .ornament-hanging.right {
+    right: var(--space-5);
+  }
 }
 
 /* ── 2. Kufic Divider ────────────────────────────────────────────── */
@@ -46,12 +61,14 @@
   position: relative;
   opacity: 0.7;
 }
+
 .divider-kufic::before, .divider-kufic::after {
   content: '';
   flex: 1;
   height: 1px;
   background: var(--border);
 }
+
 .divider-kufic-icon {
   margin: 0 var(--space-4);
   width: 12px;
@@ -62,6 +79,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .divider-kufic-icon::after {
   content: '';
   width: 4px;
@@ -81,6 +99,7 @@
   overflow: hidden;
   z-index: 1;
 }
+
 .frame-calligraphy::before {
   content: '';
   position: absolute;
@@ -90,11 +109,15 @@
   pointer-events: none;
   z-index: -1;
 }
+
 /* Corner accents for the frame */
 .frame-calligraphy::after {
   content: '';
   position: absolute;
-  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
   border-top: 1px solid rgba(196, 147, 42, 0.4);
   border-bottom: 1px solid rgba(196, 147, 42, 0.4);
   width: calc(100% - 20px);
@@ -124,6 +147,7 @@
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2.5 17.5L40 20l-17.5 2.5L20 40l-2.5-17.5L0 20l17.5-2.5z' fill='none' stroke='%23C4932A' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
   background-size: 80px 80px;
 }
+
 .bg-kufic-grid.dark {
   opacity: 0.15;
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2.5 17.5L40 20l-17.5 2.5L20 40l-2.5-17.5L0 20l17.5-2.5z' fill='none' stroke='%23FFFFFF' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
@@ -138,23 +162,31 @@
   z-index: 10;
   opacity: 0.5;
 }
+
 .corner-ornament.top-left {
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   border-top: 2px solid var(--gold);
   border-left: 2px solid var(--gold);
 }
+
 .corner-ornament.top-right {
-  top: 0; right: 0;
+  top: 0;
+  right: 0;
   border-top: 2px solid var(--gold);
   border-right: 2px solid var(--gold);
 }
+
 .corner-ornament.bottom-left {
-  bottom: 0; left: 0;
+  bottom: 0;
+  left: 0;
   border-bottom: 2px solid var(--gold);
   border-left: 2px solid var(--gold);
 }
+
 .corner-ornament.bottom-right {
-  bottom: 0; right: 0;
+  bottom: 0;
+  right: 0;
   border-bottom: 2px solid var(--gold);
   border-right: 2px solid var(--gold);
 }

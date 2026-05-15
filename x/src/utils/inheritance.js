@@ -35,7 +35,10 @@ export const HEIR_DEFS = [
     group: 'Parents',
     quran: '4:11',
     getShare(heirs) {
-      if (heirs.son || heirs.grandson) return { num: 1, den: 6 }; // fixed
+      if (heirs.son || heirs.grandson) {
+        return { num: 1, den: 6 };
+      } // fixed
+
       return null; // residuary
     }
   },
@@ -46,7 +49,10 @@ export const HEIR_DEFS = [
     quran: '4:11',
     getShare(heirs) {
       const hasBrothers = (heirs.brother || 0) + (heirs.sister || 0) >= 2;
-      if (heirs.son || heirs.grandson || hasBrothers) return { num: 1, den: 6 };
+      if (heirs.son || heirs.grandson || hasBrothers) {
+        return { num: 1, den: 6 };
+      }
+
       return { num: 1, den: 3 };
     }
   },
@@ -56,7 +62,9 @@ export const HEIR_DEFS = [
     group: 'Children',
     quran: '4:11',
     blockedBy: [],
-    getShare() { return null; } // residuary — males get double daughters
+    getShare() {
+      return null;
+    } // residuary — males get double daughters
   },
   {
     key: 'daughter',
@@ -64,9 +72,15 @@ export const HEIR_DEFS = [
     group: 'Children',
     quran: '4:11',
     getShare(heirs) {
-      if (heirs.son) return null; // with son = residuary (asaba)
+      if (heirs.son) {
+        return null;
+      } // with son = residuary (asaba)
+
       const count = heirs.daughter || 1;
-      if (count === 1) return { num: 1, den: 2 };
+      if (count === 1) {
+        return { num: 1, den: 2 };
+      }
+
       return { num: 2, den: 3 }; // 2+ daughters = 2/3 shared
     }
   },
@@ -76,7 +90,9 @@ export const HEIR_DEFS = [
     group: 'Children',
     quran: '4:11',
     blockedBy: ['son'],
-    getShare(heirs) { return null; } // residuary if no son
+    getShare(heirs) {
+      return null;
+    } // residuary if no son
   },
   {
     key: 'granddaughter',
@@ -85,9 +101,15 @@ export const HEIR_DEFS = [
     quran: '4:11',
     blockedBy: ['son', 'daughter'], // blocked if 2+ daughters
     getShare(heirs) {
-      if (heirs.son || heirs.grandson) return null; // asaba
+      if (heirs.son || heirs.grandson) {
+        return null;
+      } // asaba
+
       if (heirs.daughter) {
-        if ((heirs.daughter || 0) >= 2) return null; // blocked (2/3 already taken)
+        if ((heirs.daughter || 0) >= 2) {
+          return null;
+        } // blocked (2/3 already taken)
+
         return { num: 1, den: 6 }; // supplement to make 2/3
       }
       return { num: 1, den: 2 };
@@ -98,18 +120,35 @@ export const HEIR_DEFS = [
     label: 'Full Brother(s)',
     group: 'Siblings',
     quran: '4:176',
-    blockedBy: ['son','grandson','father'],
-    getShare() { return null; } // residuary
+    blockedBy: [
+      'son',
+      'grandson',
+      'father'
+    ],
+    getShare() {
+      return null;
+    } // residuary
   },
   {
     key: 'sister',
     label: 'Full Sister(s)',
     group: 'Siblings',
     quran: '4:176',
-    blockedBy: ['son','grandson','father','brother'],
+    blockedBy: [
+      'son',
+      'grandson',
+      'father',
+      'brother'
+    ],
     getShare(heirs) {
-      if (heirs.brother) return null; // asaba with brother (gets half)
-      if ((heirs.sister || 1) === 1) return { num: 1, den: 2 };
+      if (heirs.brother) {
+        return null;
+      } // asaba with brother (gets half)
+
+      if ((heirs.sister || 1) === 1) {
+        return { num: 1, den: 2 };
+      }
+
       return { num: 2, den: 3 };
     }
   },
@@ -120,7 +159,10 @@ export const HEIR_DEFS = [
     quran: '4:11',
     blockedBy: ['father'],
     getShare(heirs) {
-      if (heirs.son || heirs.grandson) return { num: 1, den: 6 };
+      if (heirs.son || heirs.grandson) {
+        return { num: 1, den: 6 };
+      }
+
       return null;
     }
   },
@@ -129,8 +171,10 @@ export const HEIR_DEFS = [
     label: 'Paternal Grandmother',
     group: 'Extended',
     quran: 'Hadith',
-    blockedBy: ['father','mother'],
-    getShare() { return { num: 1, den: 6 }; }
+    blockedBy: ['father', 'mother'],
+    getShare() {
+      return { num: 1, den: 6 };
+    }
   },
   {
     key: 'maternal_grandmother',
@@ -138,7 +182,9 @@ export const HEIR_DEFS = [
     group: 'Extended',
     quran: 'Hadith',
     blockedBy: ['mother'],
-    getShare() { return { num: 1, den: 6 }; }
+    getShare() {
+      return { num: 1, den: 6 };
+    }
   },
 ];
 
@@ -156,11 +202,15 @@ export function calcInheritance(activeHeirs, estate = 100) {
   // 1. Determine fixed shares and collect residuaries
   for (const def of HEIR_DEFS) {
     const count = activeHeirs[def.key];
-    if (!count) continue;
+    if (!count) {
+      continue;
+    }
 
     // Check if blocked
     const isBlocked = (def.blockedBy || []).some(b => activeHeirs[b] > 0);
-    if (isBlocked) continue;
+    if (isBlocked) {
+      continue;
+    }
 
     const share = def.getShare(activeHeirs, count);
 
@@ -177,7 +227,7 @@ export function calcInheritance(activeHeirs, estate = 100) {
         amount: 0,
       });
     } else {
-      residuaryHeirs.push({ def, count });
+      residuaryHeirs.push({def, count});
     }
   }
 
@@ -193,8 +243,8 @@ export function calcInheritance(activeHeirs, estate = 100) {
   // Distribute residue among asaba
   if (remainder > 0 && residuaryHeirs.length > 0) {
     // Sons get 2x daughters (if mixed); otherwise equal among same-sex
-    const hasSon  = residuaryHeirs.find(h => h.def.key === 'son');
-    const hasDau  = residuaryHeirs.find(h => h.def.key === 'daughter' && activeHeirs.son > 0);
+    const hasSon = residuaryHeirs.find(h => h.def.key === 'son');
+    const hasDau = residuaryHeirs.find(h => h.def.key === 'daughter' && activeHeirs.son > 0);
 
     if (hasSon && activeHeirs.son > 0 && activeHeirs.daughter > 0) {
       // Mixed: son gets 2 shares per son, daughter 1 per daughter
@@ -203,13 +253,29 @@ export function calcInheritance(activeHeirs, estate = 100) {
       const totalShares = sonShares + dauShares;
       residuaryHeirs.forEach(h => {
         const shares = (h.def.key === 'son' ? 2 : 1) * h.count;
-        results.push({ key: h.def.key, label: h.def.label, count: h.count, fraction: remainder * shares / totalShares, shareStr: 'Residue', percent: 0, amount: 0 });
+        results.push({
+          key: h.def.key,
+          label: h.def.label,
+          count: h.count,
+          fraction: remainder * shares / totalShares,
+          shareStr: 'Residue',
+          percent: 0,
+          amount: 0
+        });
       });
     } else {
       // Equal split among residuaries
       const totalCount = residuaryHeirs.reduce((a, h) => a + h.count, 0);
       residuaryHeirs.forEach(h => {
-        results.push({ key: h.def.key, label: h.def.label, count: h.count, fraction: remainder * (h.count / totalCount), shareStr: 'Residue', percent: 0, amount: 0 });
+        results.push({
+          key: h.def.key,
+          label: h.def.label,
+          count: h.count,
+          fraction: remainder * (h.count / totalCount),
+          shareStr: 'Residue',
+          percent: 0,
+          amount: 0
+        });
       });
     }
   }
@@ -224,4 +290,6 @@ export function calcInheritance(activeHeirs, estate = 100) {
   return results;
 }
 
-export function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+export function gcd(a, b) {
+  return b ? gcd(b, a % b) : a;
+}

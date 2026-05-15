@@ -1,4 +1,3 @@
-// js/utils/qibla.js
 const KAABA = { lat: 21.4225, lng: 39.8262 };
 
 /**
