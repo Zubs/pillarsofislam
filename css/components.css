@@ -349,6 +349,7 @@
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 20px;
+  margin-top: var(--space-12);
   margin-bottom: var(--space-3);
 }
 
@@ -387,6 +388,7 @@
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 9px 12px;
   margin-bottom: var(--space-4);
+  margin-top: var(--space-3);
   font-size: 13px;
   color: var(--muted);
   line-height: 1.6;
