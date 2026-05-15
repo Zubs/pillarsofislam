@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://islamichub.xyz/sitemap.xml
+Sitemap: https://islamichub.xyz/sitemap-images.xml
+
+# Common crawl traps to avoid
+Disallow: /cdn-cgi/
